@@ -8,14 +8,17 @@ Dichiariamo chi ha vinto. */
 //richiesta all'utente condizione pari o dispari
 var askBet = prompt("Scommetti pari o dispari");
 console.log(askBet);
+
 //richiesta all'utente utente di un numero da 1 a 5
 var askNumber = parseInt(prompt("Scegli un numero da 1 a 5"));
 console.log("Numero utente: ", askNumber);
 
 //funzione che verifica se l'utente inserisce un numero fuori range
 /* function verNumberRange(nmbr) {
-  if (askNumber <= 0 && askNumber > 5) {
-    return "Il numero inserito non è nel range richiesto";
+  var nmbr;
+  while (nmbr <= 0 || nmbr > 5) {
+    i++;
+ alert("Il numero inserito non è nel range richiesto");
   }
 } */
 
@@ -47,10 +50,18 @@ var result = evenOrOdd(sommaNumeri);
 console.log(result);
 
 //OUTPUT
+var numeroUtente = document.getElementById("numero-utente");
+var numeroPc = document.getElementById("numero-pc");
+var vincitore = document.getElementById("vincitore");
 
 //dichiarazione vincitore
 if (result === askBet) {
   console.log("Hai vinto tu caro utente");
+  vincitore.innerHTML = "Hai vinto tu caro utente";
 } else {
   console.log("Ha vinto il computer!!");
+  vincitore.innerHTML = "Hai perso!! Vittoria del PC";
 }
+
+numeroUtente.innerHTML = "Numero Utente: " + askNumber;
+numeroPc.innerHTML = "Numero Pc: " + rndmNmbrPc;
