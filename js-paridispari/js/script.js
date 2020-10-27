@@ -7,23 +7,31 @@ Dichiariamo chi ha vinto. */
 
 //richiesta all'utente condizione pari o dispari
 var askBet = prompt("Scommetti pari o dispari");
+//ciclo per verificare che stringa non sia vuota e che sia uguale a dispari o pari
+while (
+  (askBet !== "pari" &&
+    askBet !== "dispari" &&
+    askBet !== "Pari" &&
+    askBet !== "Dispari") ||
+  askBet === ""
+) {
+  alert("Attenzione, inserire pari o dispari");
+  askBet = prompt("Scommetti pari o dispari");
+}
+
 console.log(askBet);
 
 //richiesta all'utente utente di un numero da 1 a 5
 var askNumber = parseInt(prompt("Scegli un numero da 1 a 5"));
+
+//ciclo while per far si che l'utente metta numero del range definito
+var askNumber = 0;
+while (askNumber <= 0 || askNumber > 5) {
+  alert("metti il numero giusto da 1 a 5");
+  var askNumber = parseInt(prompt("Scegli un numero da 1 a 5"));
+}
+
 console.log("Numero utente: ", askNumber);
-
-//funzione che verifica se l'utente inserisce un numero fuori range
-/* function verNumberRange(nmbr) {
-  var nmbr;
-  while (nmbr <= 0 || nmbr > 5) {
-    i++;
- alert("Il numero inserito non è nel range richiesto");
-  }
-} */
-
-/* var rangeCheck = verNumberRange(askNumber);
-console.log(rangeCheck); */
 
 //funzione che genera un numero random (con intervallo desiderato) per il computer
 function randomNumber(min, max) {
