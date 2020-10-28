@@ -25,8 +25,8 @@ console.log(askBet);
 var askNumber = parseInt(prompt("Scegli un numero da 1 a 5"));
 
 //ciclo while per far si che l'utente metta numero del range definito
-var askNumber = 0;
-while (askNumber <= 0 || askNumber > 5) {
+
+while (askNumber <= 0 || askNumber > 5 || isNaN(askNumber)) {
   alert("metti il numero giusto da 1 a 5");
   var askNumber = parseInt(prompt("Scegli un numero da 1 a 5"));
 }
