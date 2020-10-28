@@ -20,7 +20,7 @@ function reverseString(str) {
 }
 
 //verifico se la parola invertita è uguale alla parola iniziale e creo variabile per stampare dopo il testo
-if (reverseWord === askWord) {
+if (reverseWord.toUpperCase() === askWord.toUpperCase()) {
   console.log("La parola è palindroma");
   var palOrNot = "La parola " + askWord + " è palindroma";
 } else {
